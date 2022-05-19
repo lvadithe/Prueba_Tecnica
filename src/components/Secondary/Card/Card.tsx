@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
-import { DataContext } from '../../Data/context/DataContext'
-import icons from '../../../assets/icons'
+import { DataContext } from '../../../Data/context/DataContext'
+import icons from '../../../utilities'
 // import useDivider from '../../../customHooks/halver'
 // const { useEffect, useState } = React
 
-export default function MainPAge() {
+export default function Card() {
   const first = useContext(DataContext)
   const { data } = first()
 

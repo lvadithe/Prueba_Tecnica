@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import MainPAge from './components/Principal/MainPage/MainPAge';
+import Main from './components/Principal/Main/Main';
 
 function App() {
   /* const { data } = useGetRecipes(); */
   
   return (
     <div className="App">
-      <MainPAge />
+      <Main />
     </div>
   );
 }
