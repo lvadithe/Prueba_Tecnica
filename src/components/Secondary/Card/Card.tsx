@@ -9,12 +9,13 @@ export default function Card() {
   const { data } = first()
 
   useEffect(() => {
-    data && data.sort((a: {title: string}, b: {title: string}) => a.title.length - b.title.length)
+    data && data.sort((a: { title: string }, b: { title: string }) => a.title.length - b.title.length)
     const recipes = data.slice(0, 4)
     setState(recipes)
   }, [data])
 
   const dividePhraseInHalf = (phrase: string) => {
+
     const words = phrase.split(' ')
     const half = Math.floor(words.length / 2)
     const firstHalf = words.slice(0, half).join(' ')
@@ -39,8 +40,10 @@ export default function Card() {
               <div key={index} className="card_info" >
                 <img src={item.image} alt="food" className='img_card' />
                 <div className='card_info_text'>
-                  <h1>{firstHalf}</h1>
-                  <span>{secondHalf}</span>
+                  <div className='title'>
+                    <h1>{firstHalf}</h1>
+                    <span>{secondHalf}</span>
+                  </div>
                   <div className='star_fav_card'>
                     <img className='star_card' src={icons.star} alt="icon" />
                     <h2>{item.aggregateLikes}</h2>

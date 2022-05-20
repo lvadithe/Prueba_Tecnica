@@ -60,6 +60,10 @@
         .home_icon {
             height: 5vw;
             display: flex;
+            padding-right: 70px;
+        }
+        ._logo_container  {
+            padding-right: 50%;
         }
 }
 
@@ -72,8 +76,11 @@
         }
 }
 
-@media screen and (max-width: 391px) {
-        ._nav_containe {
-            width: 50vh;
+@media screen and (max-width: 428px) {
+        ._logo_container {
+            padding-right: 75px;
+        }
+        .home_icon {
+            padding-left: 75px;
         }
 }

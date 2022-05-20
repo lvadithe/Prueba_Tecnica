@@ -1,3 +1,4 @@
+import Cards from "../../Mobile/Cards/Cards";
 import ContainerCard from "../../Secondary/ContainerCard/ContainerCard";
 import Banner from "../Banner/Banner";
 import Footer from "../Footer/Footer";
@@ -10,6 +11,7 @@ export default function Main() {
         <div>
             <NavBar />
             <Banner />
+            <Cards />  
             <ContainerCard />
             <Footer />
         </div>

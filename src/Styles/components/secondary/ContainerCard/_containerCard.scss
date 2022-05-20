@@ -19,6 +19,10 @@
     flex-wrap: wrap;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .container_cards {
     display: flex;
     align-items: baseline;
@@ -30,10 +34,9 @@
 //Media
 
 @media screen and (max-width: 500px) {
+
     .title_container {
-        align-items: center;
-        margin-left: 120px;
-        text-align: center;
+        display: flex;
         margin-bottom: 0px;
         font-size: 50px;
     }
