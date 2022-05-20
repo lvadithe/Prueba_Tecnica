@@ -4,11 +4,11 @@ Aranda Software
 
 En esta prueba se implementaron tecnologias como:
 
-Typescript
-Sass
-React(Hooks, ReactContext)
-Axios
-Firebase Deploy
+- Typescript
+- Sass
+- React(Hooks, ReactContext)
+- Axios
+- Firebase Deploy
 
 # Getting Started with Create React App
 
