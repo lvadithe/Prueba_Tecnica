@@ -1,3 +1,15 @@
+Prueba Tecnica FRONTEND 
+
+Aranda Software
+
+En esta prueba se implementaron tecnologias como:
+
+Typescript
+Sass
+React(Hooks, ReactContext)
+Axios
+Firebase Deploy
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
