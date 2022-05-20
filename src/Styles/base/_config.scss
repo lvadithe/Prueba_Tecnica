@@ -8,6 +8,30 @@
     src: url('/assets/fonts/Poppins-Light.ttf') format('openType');
 }
 
+//Colors
+
+:root {
+    --color-bg-primary: #fff;
+    --color-font-primary: #425966;
+    --color-font-secondary: #D84A4A;
+
+    //Card colors
+    --color-card-primary: #8b8b8b;
+    --color-card-info: #bfccd496,
+    
+}
+
 //Base
 
 @import './_base';
+
+//Components
+
+//Principal
+@import '../components/principal/Navbar/_navbar';
+@import '../components/principal/Banner/_banner';
+@import '../components/principal/Footer/_footer';
+
+//Secondary
+@import '../components/secondary/Card/_card';
+@import '../components/secondary/ContainerCard/_containerCard';

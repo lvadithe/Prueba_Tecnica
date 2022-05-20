@@ -12,7 +12,7 @@ export const useGetRecipes = () => {
         loading: true,
     });
     useEffect(() => {
-        axios.get("https://api.spoonacular.com/recipes/complexSearch?apiKey=365006ec435e4b8fa9de41e33c3fe3a2&number=4&addRecipeInformation=true")
+        axios.get("https://api.spoonacular.com/recipes/complexSearch?apiKey=866b5b6e90614cdcb597cf6d92717f4a&number=8&addRecipeInformation=true")
             .then(res => {
                 setRecipes({
                     data: res.data.results,

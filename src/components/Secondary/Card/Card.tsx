@@ -1,12 +1,18 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../../../Data/context/DataContext'
 import icons from '../../../utilities'
-// import useDivider from '../../../customHooks/halver'
-// const { useEffect, useState } = React
+
 
 export default function Card() {
   const first = useContext(DataContext)
+  const [state, setState] = useState([])
   const { data } = first()
+
+  useEffect(() => {
+    data && data.sort((a: {title: string}, b: {title: string}) => a.title.length - b.title.length)
+    const recipes = data.slice(0, 4)
+    setState(recipes)
+  }, [data])
 
   const dividePhraseInHalf = (phrase: string) => {
     const words = phrase.split(' ')
@@ -17,46 +23,46 @@ export default function Card() {
     return [firstHalf, secondHalf]
   }
 
-  console.log(data)
+  console.log(state)
 
   return (
-    <div>
-      {
-        data.map((item: {
-          title: string, image: string,
-          aggregateLikes: number, servings: number,
-          readyInMinutes: number
-        }, index: number) => {
-          const [firstHalf, secondHalf] = dividePhraseInHalf(item.title)
-          return (
-            <div key={index}>
-              <img src={item.image} alt="" />
-              <span>{firstHalf}</span>
-              <h3
-                style={{
-                  color: 'red',
-                }}
-              >{secondHalf}</h3>
-              <div>
-                <img src={icons.star} alt="icon" />
-                <h2>{item.aggregateLikes}</h2>
-                <img src={icons.favorite} alt="icon" />
+    <>
+      <div className='container_cards'>
+        {
+          state && state.map((item: {
+            title: string, image: string,
+            aggregateLikes: number, servings: number,
+            readyInMinutes: number
+          }, index: number) => {
+            const [firstHalf, secondHalf] = dividePhraseInHalf(item.title)
+            return (
+              <div key={index} className="card_info" >
+                <img src={item.image} alt="food" className='img_card' />
+                <div className='card_info_text'>
+                  <h1>{firstHalf}</h1>
+                  <span>{secondHalf}</span>
+                  <div className='star_fav_card'>
+                    <img className='star_card' src={icons.star} alt="icon" />
+                    <h2>{item.aggregateLikes}</h2>
+                    <img className='fav_card' src={icons.favorite} alt="icon" />
+                  </div>
+                </div >
+                <div className='detail_card' >
+                  <img className='icon_card' src={icons.portion} alt="icon" />
+                  <h1>Tamaño de la porcion</h1>
+                  <h2>{item.servings} Raciones</h2>
+                  <img className='icon_card' src={icons.time} alt="icon" />
+                  <h1>Tiempo de preparacion</h1>
+                  <h2>{item.readyInMinutes} Minutos</h2>
+                  <img className='icon_card' src={icons.chef} alt="icon" />
+                  <h1>Dificultad</h1>
+                  <h2>Facil</h2>
+                </div>
               </div>
-              <div>
-                <img src={icons.portion} alt="icon" />
-                <h1>Tamaño de la porcion</h1>
-                <h2>{item.servings} Raciones</h2>
-                <img src={icons.time} alt="icon" />
-                <h1>Tiempo de preparacion</h1>
-                <h2>{item.readyInMinutes} Minutos</h2>
-                <img src={icons.chef} alt="icon" />
-                <h1>Dificultad</h1>
-                <h2>Facil</h2>
-              </div>
-            </div>
-          )
-        })
-      }
-    </div>
+            )
+          })
+        }
+      </div>
+    </>
   )
 }
